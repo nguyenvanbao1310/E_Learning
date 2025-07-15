@@ -18,6 +18,10 @@ const CourseCard = ({
   const [showModal, setShowModal] = useState(false);
 
   const handleShowDetail = () => {
+    const viewed = JSON.parse(localStorage.getItem("viewedCourses")) || [];
+    if (!viewed.includes(id)) {
+      localStorage.setItem("viewedCourses", JSON.stringify([...viewed, id]));
+    }
     setShowModal(true);
   };
 
@@ -54,10 +58,10 @@ const CourseCard = ({
         </div>
         <div className="course-card__footer">
           <span>
-            <FaBookOpen /> {classes} classes
+            <FaBookOpen /> Tổng lớp: {classes}
           </span>
           <span>
-            <FaUser /> {students} students
+            <FaUser /> Tổng HS: {students}
           </span>
         </div>
       </div>
@@ -75,13 +79,13 @@ const CourseCard = ({
                 <strong>Rating:</strong> {rating} ⭐
               </p>
               <p>
-                <strong>Price:</strong> {price}VNĐ
+                <strong>Price:</strong> {price}đ
               </p>
               <p>
-                <strong>Classes:</strong> {classes}
+                <strong>Tổng Lớp:</strong> {classes}
               </p>
               <p>
-                <strong>Students:</strong> {students}
+                <strong>Tổng HS:</strong> {students}
               </p>
             </div>
             <div className="modal-description">

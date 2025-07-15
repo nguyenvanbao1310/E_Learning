@@ -17,7 +17,7 @@
   justify-content: space-between;
 }
 .logo {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: #1e1e1e;
   padding: 16px 8px;
@@ -26,6 +26,11 @@
 .logo .dot {
   color: #5f57ff;
   /* font-size: 7.8rem; */
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
 }
 
 .header_nav {
@@ -38,7 +43,7 @@
 
 .header_nav li a {
   text-decoration: none;
-  font-size: 2.3rem;
+  font-size: 2rem;
   color: rgb(87, 89, 95);
   font-weight: 500;
   position: relative;
@@ -85,4 +90,128 @@
 .headers_button .btn_SignUp:hover {
   background-color: #5f57ff;
   color: white;
+}
+
+@media (max-width: 1023px) and (min-width: 741px) {
+  .header_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+  .logo {
+    font-size: 2.2rem;
+  }
+  .header_nav li a {
+    font-size: 1.6rem;
+  }
+
+  .headers_button .btn {
+    padding: 12px 24px;
+    font-size: 1.4rem;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 740px) {
+  .header {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  .header_container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: flex-start;
+  }
+  .logo {
+    font-size: 2.6rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 16px;
+  }
+
+  .nav {
+    /* display: none; */
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 60%;
+    height: 100vh;
+    background-color: #edeaff;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 40px 10px;
+  }
+
+  .nav.open {
+    right: 0;
+  }
+
+  .header_nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 16px 0;
+    list-style: none;
+  }
+
+  .header_nav li a {
+    text-decoration: none;
+    font-size: 1.6rem;
+    color: #5f57ff;
+  }
+
+  .header_nav li a:hover {
+    color: #5f57ff;
+    cursor: pointer;
+  }
+
+  .headers_button {
+    display: none;
+  }
+  .mobile-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+    align-items: center;
+    text-align: left;
+  }
+
+  .mobile-buttons .btn {
+    padding: 10px 16px;
+    font-size: 1.6rem;
+    width: 100%;
+    border: 1px solid #5f57ff;
+    font-weight: normal;
+    margin-left: 12px;
+  }
+
+  .mobile-buttons .btn_SignIn {
+    background-color: #edeaff;
+    color: #5f57ff;
+    font-family: "__Poppins_f2c6a8,__Poppins_Fallback_f2c6a8";
+  }
+
+  .mobile-buttons .btn_SignUp {
+    background-color: #edeaff;
+    color: #5f57ff;
+    font-family: "__Poppins_f2c6a8,__Poppins_Fallback_f2c6a8";
+  }
+
+  .mobile-buttons .btn_SignIn:active,
+  .mobile-buttons .btn_SignUp:active {
+    background-color: #5f57ff;
+    color: white;
+  }
 }

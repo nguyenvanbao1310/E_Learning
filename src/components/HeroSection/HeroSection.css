@@ -91,3 +91,138 @@
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 1023px) and (min-width: 741px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0px 40px;
+    text-align: center;
+  }
+
+  .hero__content {
+    margin-left: 0;
+  }
+
+  .hero__promo {
+    font-size: 2.6rem;
+    color: #43c639;
+    font-weight: bold;
+  }
+
+  .hero__title {
+    font-size: 4rem;
+  }
+
+  .hero__desc {
+    font-size: 2.6rem;
+  }
+
+  .hero__search {
+    flex-direction: row;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero__search input {
+    padding: 20px;
+    font-size: 1.6rem;
+  }
+
+  .hero__search button {
+    padding: 0 24px;
+    margin-right: 6px;
+  }
+
+  .hero__features {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 20px;
+    margin-right: auto;
+  }
+
+  .hero__feature {
+    display: flex;
+    font-size: 2.4rem;
+    gap: 10px;
+  }
+
+  .hero__images {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__image {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 740px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero__content {
+    margin-left: 0;
+  }
+
+  .hero__promo {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .hero__title {
+    font-size: 3.2rem;
+    margin-bottom: 20px;
+  }
+
+  .hero__desc {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .hero__search {
+    flex-direction: row;
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .hero__search input {
+    padding: 16px;
+    font-size: 1.6rem;
+    border-radius: 0;
+  }
+
+  .hero__search button {
+    margin: 8px auto 0;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 1.6rem;
+  }
+
+  .hero__features {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    margin-top: 24px;
+  }
+
+  .hero__feature {
+    font-size: 1.8rem;
+    min-width: 140px;
+  }
+
+  .hero__images {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero__image {
+    max-width: 100%;
+  }
+}

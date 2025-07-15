@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import CourseCard from "../components/CourseCard/CourseCard";
 import Header from "../components/Header/Header";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState(() => {
@@ -12,13 +13,23 @@ const Favorites = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/courses")
-      .then((res) => res.json())
-      .then((data) => {
-        const favoriteCourses = data.filter((course) =>
+    axios
+      .get(`${process.env.REACT_APP_API_URL}`)
+      .then((res) => {
+        const data = res.data;
+
+        const allCourses = Array.isArray(data)
+          ? data
+          : Array.isArray(data.courses)
+          ? data.courses
+          : [];
+        const favoriteCourses = allCourses.filter((course) =>
           favorites.includes(course.id)
         );
         setCourses(favoriteCourses);
+      })
+      .catch((err) => {
+        console.error("Lỗi khi gọi API yêu thích:", err);
       });
   }, [favorites]);
 
@@ -28,7 +39,6 @@ const Favorites = () => {
     localStorage.setItem("favorites", JSON.stringify(updated));
     toast.error(`Hủy yêu thích: ${title}`);
   };
-
   return (
     <>
       <Header />

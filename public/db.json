@@ -2,7 +2,7 @@
   "courses": [
     {
       "id": 1,
-      "image": "http://localhost:3000/img/c++.png",
+      "image": "img/c++.png",
       "title": "Lập trình C++ cơ bản, nâng cao",
       "price": 299000,
       "description": "Mục tiêu của khóa học này nhằm giúp các bạn nắm được các khái niệm căn cơ của lập trình...",
@@ -12,7 +12,7 @@
     },
     {
       "id": 2,
-      "image": "http://localhost:3000/img/html_css.png",
+      "image": "img/html_css.png",
       "title": "HTML CSS từ Zero đến Hero",
       "price": 449000,
       "description": "Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
@@ -22,7 +22,7 @@
     },
     {
       "id": 3,
-      "image": "http://localhost:3000/img/javascript.png",
+      "image": "img/javascript.png",
       "title": "Lập Trình JavaScript Cơ Bản",
       "price": 530000,
       "description": "Học Javascript cơ bản phù hợp cho người chưa từng học lập trình...",
@@ -32,7 +32,7 @@
     },
     {
       "id": 4,
-      "image": "http://localhost:3000/img/responsive.png",
+      "image": "img/responsive.png",
       "title": "Responsive Với Grid System",
       "price": 750000,
       "description": "Học cách xây dựng responsive layout với Grid System.",
@@ -42,7 +42,7 @@
     },
     {
       "id": 5,
-      "image": "http://localhost:3000/img/reactjs.png",
+      "image": "img/reactjs.png",
       "title": "Xây Dựng Website với ReactJS",
       "price": 700000,
       "description": "Khóa học ReactJS từ cơ bản tới nâng cao...",
@@ -52,7 +52,7 @@
     },
     {
       "id": 6,
-      "image": "http://localhost:3000/img/it.png",
+      "image": "img/it.png",
       "title": "Kiến Thức Nhập Môn IT",
       "price": 300000,
       "description": "Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các videos tại khóa này trước nhé.",
@@ -62,7 +62,7 @@
     },
     {
       "id": 7,
-      "image": "http://localhost:3000/img/javaadvance.png",
+      "image": "img/javaadvance.png",
       "title": "Lập Trình JavaScript Nâng Cao",
       "price": 649000,
       "description": "Hiểu sâu hơn về cách Javascript hoạt động, tìm hiểu về IIFE, closure, reference types, this keyword, bind, call, apply, prototype, ...",
@@ -72,7 +72,7 @@
     },
     {
       "id": 8,
-      "image": "http://localhost:3000/img/ubuntu.png",
+      "image": "img/ubuntu.png",
       "title": "Làm việc với Terminal & Ubuntu",
       "price": 399000,
       "description": "Sở hữu một Terminal hiện đại, mạnh mẽ trong tùy biến và học cách làm việc với Ubuntu là một bước quan trọng trên con đường trở thành một Web Developer.",
@@ -82,7 +82,7 @@
     },
     {
       "id": 9,
-      "image": "http://localhost:3000/img/nodejs.png",
+      "image": "img/nodejs.png",
       "title": "Node & ExpressJS",
       "price": 560000,
       "description": "Học Back-end với Node & ExpressJS framework, hiểu các khái niệm khi làm Back-end và xây dựng RESTful API cho trang web.",
@@ -92,7 +92,7 @@
     },
     {
       "id": 10,
-      "image": "http://localhost:3000/img/app.png",
+      "image": "img/app.png",
       "title": "App 'Đừng Chạm Tay Lên Mặt'",
       "price": 640000,
       "description": "Xây dựng ứng dụng đưa ra cảnh báo khi người dùng sờ tay lên mặt. Chúng ta sẽ sử dụng thư viện ReactJS & Tensoflow để hoàn thiện ứng dụng này.",

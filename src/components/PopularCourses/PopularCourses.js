@@ -9,6 +9,9 @@ const PopularCourses = () => {
   const [searchItems, setSearchItems] = useState("");
   const [minRating, setMinRating] = useState(0);
   const [maxPrice, setMaxPrice] = useState(Infinity);
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
 
   const [favorites, setFavorites] = useState(() => {
     const stored = localStorage.getItem("favorites");
@@ -32,9 +35,20 @@ const PopularCourses = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/courses")
+      .get(`${process.env.REACT_APP_API_URL}`)
       .then((res) => {
-        setCourses(res.data);
+        const data = res.data;
+
+        console.log("API trả về:", data);
+
+        if (Array.isArray(data)) {
+          setCourses(data);
+        } else if (Array.isArray(data.courses)) {
+          setCourses(data.courses);
+        } else {
+          console.error("Dữ liệu trả về không hợp lệ:", data);
+          setCourses([]); // fallback
+        }
       })
       .catch((err) => {
         console.error("Lỗi khi gọi API:", err);
@@ -53,10 +67,32 @@ const PopularCourses = () => {
     return matchKeyword && matchRating && matchPrice;
   });
 
+  const fetchSuggestions = () => {
+    const viewed = JSON.parse(localStorage.getItem("viewedCourses")) || [];
+    const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    const suggestions = courses.filter(
+      (course) => viewed.includes(course.id) || favorites.includes(course.id)
+    );
+
+    setSuggestions(suggestions);
+    setShowSuggestions(true);
+  };
+
+  const itemsPerPage = 4;
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentCourses = filteredCourses.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+
+  const totalPages = Math.ceil(filteredCourses.length / itemsPerPage);
+
   return (
     <section className="popular-courses">
       <div className="popular-courses__header">
-        <h2>Popular courses.</h2>
+        <h2>All courses</h2>
         <div className="filter">
           <select onChange={(e) => setMinRating(Number(e.target.value))}>
             <option value="0">Tất cả sao</option>
@@ -79,7 +115,7 @@ const PopularCourses = () => {
         />
       </div>
       <div className="popular-courses__list">
-        {filteredCourses.map((course) => (
+        {currentCourses.map((course) => (
           <CourseCard
             key={course.id}
             {...course}
@@ -88,6 +124,38 @@ const PopularCourses = () => {
           />
         ))}
       </div>
+      <div className="pagination">
+        {[...Array(totalPages)].map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentPage(index + 1)}
+            className={currentPage === index + 1 ? "active-page" : ""}
+          >
+            {index + 1}
+          </button>
+        ))}
+      </div>
+      <div style={{ textAlign: "center", marginTop: "32px" }}>
+        <button onClick={fetchSuggestions} className="btn-suggestion">
+          Gợi ý sản phẩm phù hợp
+        </button>
+      </div>
+
+      {showSuggestions && (
+        <div style={{ marginTop: "32px" }}>
+          <h2>Gợi ý cho bạn</h2>
+          <div className="popular-courses__list">
+            {suggestions.map((course) => (
+              <CourseCard
+                key={course.id}
+                {...course}
+                isLiked={favorites.includes(course.id)}
+                onToggleLike={handleToggleLike}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };
