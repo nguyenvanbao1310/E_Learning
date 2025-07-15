@@ -1,0 +1,54 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "image": "http://localhost:3000/img/c++.png",
+      "title": "Lập trình C++ cơ bản, nâng cao",
+      "price": 299000,
+      "description": "Mục tiêu của khóa học này nhằm giúp các bạn nắm được các khái niệm căn cơ của lập trình...",
+      "rating": 5,
+      "classes": 12,
+      "students": 150
+    },
+    {
+      "id": 2,
+      "image": "http://localhost:3000/img/html_css.png",
+      "title": "HTML CSS từ Zero đến Hero",
+      "price": 449000,
+      "description": "Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
+      "rating": 4.2,
+      "classes": 10,
+      "students": 112
+    },
+    {
+      "id": 3,
+      "image": "http://localhost:3000/img/javascript.png",
+      "title": "Lập Trình JavaScript Cơ Bản",
+      "price": 530000,
+      "description": "Học Javascript cơ bản phù hợp cho người chưa từng học lập trình...",
+      "rating": 4.4,
+      "classes": 30,
+      "students": 437
+    },
+    {
+      "id": 4,
+      "image": "http://localhost:3000/img/responsive.png",
+      "title": "Responsive Với Grid System",
+      "price": 750000,
+      "description": "Học cách xây dựng responsive layout với Grid System.",
+      "rating": 4.4,
+      "classes": 7,
+      "students": 100
+    },
+    {
+      "id": 5,
+      "image": "http://localhost:3000/img/reactjs.png",
+      "title": "Xây Dựng Website với ReactJS",
+      "price": 700000,
+      "description": "Khóa học ReactJS từ cơ bản tới nâng cao...",
+      "rating": 4.4,
+      "classes": 9,
+      "students": 120
+    }
+  ]
+}

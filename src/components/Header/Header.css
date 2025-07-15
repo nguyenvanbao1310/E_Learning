@@ -1,0 +1,88 @@
+.header {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  padding: 32px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header_container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo {
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #1e1e1e;
+  padding: 16px 8px;
+}
+
+.logo .dot {
+  color: #5f57ff;
+  /* font-size: 7.8rem; */
+}
+
+.header_nav {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.header_nav li a {
+  text-decoration: none;
+  font-size: 2.3rem;
+  color: rgb(87, 89, 95);
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 4px;
+  font-family: "__Poppins_f2c6a8,__Poppins_Fallback_f2c6a8";
+}
+
+.header_nav li a:hover,
+.header_nav li a.active {
+  color: #5f57ff;
+  border-bottom: 2px solid #5f57ff;
+}
+
+.headers_button .btn {
+  padding: 20px 50px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: normal;
+  margin-left: 12px;
+  transition: background 0.3s ease;
+  min-width: 190px;
+}
+
+.headers_button .btn_SignIn {
+  background-color: #5f57ff;
+  color: white;
+  font-family: "__Poppins_f2c6a8,__Poppins_Fallback_f2c6a8";
+  font-size: 2rem;
+}
+
+.headers_button .btn_SignUp {
+  background-color: #edeaff;
+  color: #5f57ff;
+  font-family: "__Poppins_f2c6a8,__Poppins_Fallback_f2c6a8";
+  font-size: 2rem;
+}
+
+.headers_button .btn_SignIn:hover {
+  background-color: #edeaff;
+  color: #5f57ff;
+}
+
+.headers_button .btn_SignUp:hover {
+  background-color: #5f57ff;
+  color: white;
+}
