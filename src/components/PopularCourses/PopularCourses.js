@@ -92,7 +92,7 @@ const PopularCourses = () => {
   return (
     <section className="popular-courses">
       <div className="popular-courses__header">
-        <h2>All courses</h2>
+        <h2>Khóa học</h2>
         <div className="filter">
           <select onChange={(e) => setMinRating(Number(e.target.value))}>
             <option value="0">Tất cả sao</option>

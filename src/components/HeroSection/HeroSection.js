@@ -5,15 +5,16 @@ const HeroSection = () => {
   return (
     <section className="hero">
       <div className="hero__content">
-        <p className="hero__promo">✅ Get 30% off on first enroll</p>
+        <p className="hero__promo">✅Giảm giá 30% khi đăng ký lần đầu</p>
         <h1 className="hero__title">
-          Advance your engineering skills with us.
+          Nâng cao kỹ năng kỹ thuật của bạn cùng chúng tôi.
         </h1>
         <p className="hero__desc">
-          Build skills with our courses and mentor from world-class companies.
+          Xây dựng kỹ năng với các khóa học của chúng tôi và được cố vấn từ các
+          công ty đẳng cấp thế giới.
         </p>
         <div className="hero__search">
-          <input type="text" placeholder="search courses..."></input>
+          <input type="text" placeholder="Tìm kiếm khóa học..."></input>
           <button>
             <i className="icon-search fa fa-search"></i>
           </button>
@@ -25,7 +26,7 @@ const HeroSection = () => {
               alt="Check Icon"
               className="icon__feature"
             />
-            Flexible
+            Linh hoạt
           </div>
           <div className="hero__feature">
             <img
@@ -33,7 +34,7 @@ const HeroSection = () => {
               alt="Check Icon"
               className="icon__feature"
             />
-            Learning path
+            Lộ trình học tập
           </div>
           <div className="hero__feature">
             <img
@@ -41,7 +42,7 @@ const HeroSection = () => {
               alt="Check Icon"
               className="icon__feature"
             />
-            Community
+            Cộng đồng
           </div>
         </div>
       </div>
