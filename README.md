@@ -23,8 +23,8 @@ CÀI ĐẶT MÔI TRƯỜNG, BUILD VÀ DEPLOY
     4.1 Chạy JSON Server: npm run server
     4.2 Chạy Reactjs: npm start
 5.  Build project React
-    1.1 npm run build
-    1.2 khi chạy sẽ tạo ra thư mục /build dùng để deploy lên hosting.
+    5.1 npm run build
+    5.2 khi chạy sẽ tạo ra thư mục /build dùng để deploy lên hosting.
 6.  Deploy trên Netlify
-    2.1 Truy cập vào: https://app.netlify.com
-    2.2 upload thư mục /build lên và deploy
+    6.1 Truy cập vào: https://app.netlify.com
+    6.2 upload thư mục /build lên và deploy
