@@ -14,7 +14,7 @@ CÀI ĐẶT MÔI TRƯỜNG, BUILD VÀ DEPLOY
     - Kiểm tra cài đặt: node -v, npm -v
 2.  Cài đặt dự án
     - Bước 1: Tại thư mục cần lưu dự án, mở terminal
-    - Bước 2: git clone https://github.com/your-username/e-commerce-education.git
+    - Bước 2: git clone https://github.com/nguyenvanbao1310/E_Learning.git
     - Bước 3: cd education
     - Bước 4: npm install
 3.  Cài Json Server (dùng API giả lập)
