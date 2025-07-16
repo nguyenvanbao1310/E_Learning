@@ -49,7 +49,7 @@
 
 .popular-courses__list {
   display: grid;
-  grid-template-columns: repeat(4, minmax(200px, 1fr)); /* nhỏ hơn 280px */
+  grid-template-columns: repeat(4, minmax(200px, 1fr));
   gap: 16px;
 }
 

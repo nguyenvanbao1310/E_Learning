@@ -68,7 +68,7 @@ const PopularCourses = () => {
   });
 
   const fetchSuggestions = () => {
-    const viewed = JSON.parse(localStorage.getItem("viewedCourses")) || [];
+    const viewed = JSON.parse(localStorage.getItem("viewedCourseIds")) || [];
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     const suggestions = courses.filter(

@@ -11,13 +11,14 @@ const Favorites = () => {
     return stored ? JSON.parse(stored) : [];
   });
   const [courses, setCourses] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(`${process.env.REACT_APP_API_URL}`)
       .then((res) => {
         const data = res.data;
-
         const allCourses = Array.isArray(data)
           ? data
           : Array.isArray(data.courses)
@@ -30,7 +31,9 @@ const Favorites = () => {
       })
       .catch((err) => {
         console.error("Lỗi khi gọi API yêu thích:", err);
-      });
+        toast.error("Không thể lấy danh sách yêu thích.");
+      })
+      .finally(() => setLoading(false));
   }, [favorites]);
 
   const handleToggleLike = (id, title) => {
@@ -47,7 +50,11 @@ const Favorites = () => {
           Khoá học đã yêu thích
         </h2>
         <div className="popular-courses__list">
-          {courses.length > 0 ? (
+          {loading ? (
+            [...Array(3)].map((_, i) => (
+              <div className="skeleton-card" key={i}></div>
+            ))
+          ) : courses.length > 0 ? (
             courses.map((course) => (
               <CourseCard
                 key={course.id}

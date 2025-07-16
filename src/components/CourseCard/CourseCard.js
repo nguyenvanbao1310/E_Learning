@@ -18,9 +18,30 @@ const CourseCard = ({
   const [showModal, setShowModal] = useState(false);
 
   const handleShowDetail = () => {
-    const viewed = JSON.parse(localStorage.getItem("viewedCourses")) || [];
-    if (!viewed.includes(id)) {
-      localStorage.setItem("viewedCourses", JSON.stringify([...viewed, id]));
+    const viewedIds = JSON.parse(localStorage.getItem("viewedCourseIds")) || [];
+    if (!viewedIds.includes(id)) {
+      localStorage.setItem(
+        "viewedCourseIds",
+        JSON.stringify([...viewedIds, id])
+      );
+    }
+    const viewedDetails =
+      JSON.parse(localStorage.getItem("viewedCourseDetails")) || [];
+    const courseData = {
+      id,
+      title,
+      image,
+      description,
+      price,
+      rating,
+    };
+
+    const isExisted = viewedDetails.some((course) => course.id === id);
+    if (!isExisted) {
+      localStorage.setItem(
+        "viewedCourseDetails",
+        JSON.stringify([courseData, ...viewedDetails])
+      );
     }
     setShowModal(true);
   };
@@ -47,10 +68,10 @@ const CourseCard = ({
           <span className="course-card__badge">Best Seller</span>
         </div>
         <div className="course-card__body">
-          <h3 className="course-card__title">{title}</h3>
-          <p className="course-card__detail" onClick={handleShowDetail}>
+          <h2 className="course-card__title">{title}</h2>
+          <span className="course-card__detail" onClick={handleShowDetail}>
             Xem chi tiết
-          </p>
+          </span>
           <div className="course-card__rating-price">
             <span className="course-card__rating">{rating} ⭐</span>
             <span className="course-card__price">{price}VNĐ</span>

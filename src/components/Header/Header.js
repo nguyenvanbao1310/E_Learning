@@ -28,7 +28,7 @@ const Header = () => {
               <Link to="/">Khóa học</Link>
             </li>
             <li>
-              <Link to="/">Hướng dẫn</Link>
+              <Link to="/HistoryView">Lịch sử</Link>
             </li>
             <li>
               <Link to="/favorites">Yêu thích</Link>

@@ -11,8 +11,8 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/history" element={<History />} />
         <Route path="/favorites" element={<Favorites />} />
+        <Route path="/HistoryView" element={<History />} />
       </Routes>
       <ToastContainer position="top-right" autoClose={2000} />
     </>
